@@ -2,7 +2,7 @@ public class Usuario extends ContaBanco {
     private String nome;
 
     public Usuario(String nome, int numero, String agencia, double saldo) {
-        super(numero, agencia, saldo);
+        super(nome ,numero, agencia, saldo);
         this.nome = nome;
     }
 
@@ -10,11 +10,18 @@ public class Usuario extends ContaBanco {
         return nome;
     }
 
-    public String convertInfos(){
+    //converter as entradas em Strings, todas as entradas
+
+    public String allInfos(){
+        String convertAgencia = ""+getAgencia();
+        String convertNumero = ""+getNumero();
+        String convertSaldo = ""+getSaldo();
+        String infos = "Nome: " + nome + "\nAgencia: "+convertAgencia+"\nNumero: "+convertNumero+"\nSaldo: "+convertSaldo; 
         
+        return infos;
     }
 
-    public void allInfos(){
-        String infos = nome+getNumero()+getAgencia()+getSaldo(); 
+    public void addUser(){
+        
     }
 }
